@@ -11,7 +11,7 @@ class LinpackTest:
         self.gflops = float(gflops)
 
     def __str__(self):
-        return f'Test #{self.number}: {self.tv} {self.n} {self.nb} {self.p} {self.q} {self.time} {self.gflops}'
+        return f'Test #{self.number}:\t{self.tv}\t{self.n}\t{self.nb}\t{self.p}\t{self.q}\t{self.time}\t{self.gflops}'
 
     @classmethod
     def from_str(cls, number, string):
@@ -27,5 +27,6 @@ if __name__ == '__main__':
                 next(f)
                 tests.append(LinpackTest.from_str(len(tests), next(f)))
     tests.sort(key=lambda test: test.gflops, reverse=True)
+    print('\t\tT/V\t\tN\tNB\tP\tQ\tTime\tGflops')
     for test in tests:
         print(test)
