@@ -21,7 +21,7 @@ class LinpackTest:
 
 if __name__ == '__main__':
     tests = list()
-    with open('Initial.HPL.out', 'r') as f:
+    with open('fans16.HPL.out', 'r') as f:
         for line in f:
             if line == LinpackTest.START_TEXT:
                 next(f)
