@@ -1,3 +1,5 @@
+import sys
+
 class LinpackTest:
     START_TEXT = 'T/V                N    NB     P     Q               Time                 Gflops\n'
     def __init__(self, number, tv, n, nb, p, q, time, gflops):
@@ -21,7 +23,7 @@ class LinpackTest:
 
 if __name__ == '__main__':
     tests = list()
-    with open('fans4.HPL.out', 'r') as f:
+    with open(sys.argv[1], 'r') as f:
         for line in f:
             if line == LinpackTest.START_TEXT:
                 next(f)
